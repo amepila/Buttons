@@ -61,7 +61,12 @@ static void Button_enable(Button_PortType port, BitsType bit){
 	}
 }
 
-void Button_init(const Button_ConfigType* Button_Config){
-	Button_clock(Button_Config->Button_Port);
-	Button_enable(Button_Config->Button_Port, Button_Config->Bit_Type);
+void Buttons_init(const Button_ConfigType* Button_Config){
+	uint8 counter;
+
+	for(counter = 0; counter < 6; counter++){
+		Button_clock(Button_Config[counter].Button_Port);
+		Button_enable(Button_Config[counter].Button_Port, Button_Config[counter].Bit_Type);
+	}
+
 }

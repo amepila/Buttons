@@ -6,7 +6,7 @@
 #include "NVIC.h"
 #include "Buttons.h"
 
-const Button_ConfigType Button_Config[6] = {
+const Button_ConfigType Buttons_Config[6] = {
 		{PORT_C,BIT3},
 		{PORT_C,BIT2},
 		{PORT_A,BIT2},
@@ -18,14 +18,7 @@ const Button_ConfigType Button_Config[6] = {
 int main(void) {
 
 	EnableInterrupts;
-	Button_init(&Button_Config[0]);
-	Button_init(&Button_Config[1]);
-	Button_init(&Button_Config[2]);
-	Button_init(&Button_Config[3]);
-	Button_init(&Button_Config[4]);
-	Button_init(&Button_Config[5]);
-
-
+	Buttons_init(Buttons_Config);
 
     while(1) {
 

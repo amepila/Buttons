@@ -23,7 +23,7 @@ typedef struct{
 
 //static void Button_enable(Button_PortType,BitsType);
 
-void Button_init(const Button_ConfigType*);
+void Buttons_init(const Button_ConfigType*);
 
 
 #endif /* BUTTONS_H_ */

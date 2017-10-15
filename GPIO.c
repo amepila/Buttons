@@ -34,6 +34,14 @@ void PORTA_IRQHandler()
 {
 	GPIO_intrStatusFlag.flagPortA  = TRUE;
 	GPIO_readInterrupt(GPIO_A);
+
+	if((1<<BIT1) == GPIO_readInterrupt(GPIO_A)){
+
+	}
+	if((1<<BIT2) == GPIO_readInterrupt(GPIO_A)){
+
+	}
+
 	GPIO_clearInterrupt(GPIO_A);
 }
 
@@ -41,6 +49,14 @@ void PORTB_IRQHandler()
 {
 	GPIO_intrStatusFlag.flagPortB  = TRUE;
 	GPIO_readInterrupt(GPIO_B);
+
+	if((1<<BIT9) == GPIO_readInterrupt(GPIO_B)){
+
+	}
+	if((1<<BIT23) == GPIO_readInterrupt(GPIO_B)){
+
+	}
+
 	GPIO_clearInterrupt(GPIO_B);
 }
 
@@ -48,6 +64,14 @@ void PORTC_IRQHandler()
 {
 	GPIO_intrStatusFlag.flagPortC  = TRUE;
 	GPIO_readInterrupt(GPIO_C);
+
+	if((1<<BIT2) == GPIO_readInterrupt(GPIO_C)){
+
+	}
+	if((1<<BIT3) == GPIO_readInterrupt(GPIO_C)){
+
+	}
+
 	GPIO_clearInterrupt(GPIO_C);
 }
 
