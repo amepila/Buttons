@@ -30,11 +30,39 @@ uint32 valuePIN(uint8 bit){
 	}
 }
 
+void PORTA_IRQHandler()
+{
+	GPIO_intrStatusFlag.flagPortA  = TRUE;
+	GPIO_readInterrupt(GPIO_A);
+	GPIO_clearInterrupt(GPIO_A);
+}
+
+void PORTB_IRQHandler()
+{
+	GPIO_intrStatusFlag.flagPortB  = TRUE;
+	GPIO_readInterrupt(GPIO_B);
+	GPIO_clearInterrupt(GPIO_B);
+}
+
 void PORTC_IRQHandler()
 {
 	GPIO_intrStatusFlag.flagPortC  = TRUE;
 	GPIO_readInterrupt(GPIO_C);
 	GPIO_clearInterrupt(GPIO_C);
+}
+
+void PORTD_IRQHandler()
+{
+	GPIO_intrStatusFlag.flagPortD  = TRUE;
+	GPIO_readInterrupt(GPIO_D);
+	GPIO_clearInterrupt(GPIO_D);
+}
+
+void PORTE_IRQHandler()
+{
+	GPIO_intrStatusFlag.flagPortE  = TRUE;
+	GPIO_readInterrupt(GPIO_E);
+	GPIO_clearInterrupt(GPIO_E);
 }
 
 uint8 GPIO_getIRQStatus(GPIO_portNameType gpio)
